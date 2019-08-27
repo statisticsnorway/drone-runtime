@@ -6,7 +6,7 @@ package mock_engine
 
 import (
 	context "context"
-	engine "github.com/drone/drone-runtime/engine"
+	engine "github.com/statisticsnorway/drone-runtime/engine"
 	gomock "github.com/golang/mock/gomock"
 	io "io"
 	reflect "reflect"

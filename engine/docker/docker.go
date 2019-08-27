@@ -22,9 +22,9 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-runtime/engine/docker/auth"
-	"github.com/drone/drone-runtime/engine/docker/stdcopy"
+	"github.com/statisticsnorway/drone-runtime/engine"
+	"github.com/statisticsnorway/drone-runtime/engine/docker/auth"
+	"github.com/statisticsnorway/drone-runtime/engine/docker/stdcopy"
 
 	"docker.io/go-docker"
 	"docker.io/go-docker/api/types"

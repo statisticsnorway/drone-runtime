@@ -14,12 +14,12 @@ import (
 
 	"github.com/mattn/go-isatty"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-runtime/engine/docker"
-	"github.com/drone/drone-runtime/engine/docker/auth"
-	"github.com/drone/drone-runtime/engine/kube"
-	"github.com/drone/drone-runtime/runtime"
-	"github.com/drone/drone-runtime/runtime/term"
+	"github.com/statisticsnorway/drone-runtime/engine"
+	"github.com/statisticsnorway/drone-runtime/engine/docker"
+	"github.com/statisticsnorway/drone-runtime/engine/docker/auth"
+	"github.com/statisticsnorway/drone-runtime/engine/kube"
+	"github.com/statisticsnorway/drone-runtime/runtime"
+	"github.com/statisticsnorway/drone-runtime/runtime/term"
 	"github.com/drone/signal"
 )
 

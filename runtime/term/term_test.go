@@ -8,8 +8,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-runtime/runtime"
+	"github.com/statisticsnorway/drone-runtime/engine"
+	"github.com/statisticsnorway/drone-runtime/runtime"
 )
 
 func TestWriteLine(t *testing.T) {

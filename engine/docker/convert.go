@@ -17,7 +17,7 @@ package docker
 import (
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/statisticsnorway/drone-runtime/engine"
 
 	"docker.io/go-docker/api/types/container"
 	"docker.io/go-docker/api/types/mount"
