@@ -251,6 +251,8 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 		}}
 	}
 
+	command := append([]string{"sleep 10 &&"},step.Docker.Command...)
+
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      step.Metadata.UID,
@@ -264,7 +266,7 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 				Name:            step.Metadata.UID,
 				Image:           step.Docker.Image,
 				ImagePullPolicy: toPullPolicy(step.Docker.PullPolicy),
-				Command:         step.Docker.Command,
+				Command:         command,
 				Args:            step.Docker.Args,
 				WorkingDir:      step.WorkingDir,
 				SecurityContext: &v1.SecurityContext{
