@@ -251,7 +251,7 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 		}}
 	}
 
-	command := append([]string{"sleep 10 &&"},step.Docker.Command...)
+	command := append([]string{"/bin/sleep 10"},step.Docker.Command...)
 
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
