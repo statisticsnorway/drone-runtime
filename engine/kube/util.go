@@ -250,10 +250,10 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 			Name: "docker-auth-config", // TODO move name to a const
 		}}
 	}
-	//command := append([]string{"/bin/sh","-c"},step.Docker.Command...)
 
-	command := []string{"/bin/sh","-c"}
+	command := []string{"/bin/sh"}
 	args := append(step.Docker.Command, step.Docker.Args...)
+	args = append([]string{"-c","sleep 10 &&"}, args...)
 
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
