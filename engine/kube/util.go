@@ -253,7 +253,7 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 
 	command := []string{"/bin/sh"}
 	args := append(step.Docker.Command, step.Docker.Args...)
-	args = append([]string{"-c","sleep 10 &&"}, args...)
+	args = append([]string{"-c","sleep 10"}, args...)
 
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
