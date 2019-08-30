@@ -250,8 +250,10 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 			Name: "docker-auth-config", // TODO move name to a const
 		}}
 	}
+	//command := append([]string{"/bin/sh","-c"},step.Docker.Command...)
 
-	command := append([]string{"/bin/sleep 10"},step.Docker.Command...)
+	command := []string{"/bin/sh","-c"}
+	args := append(step.Docker.Command, step.Docker.Args...)
 
 	return &v1.Pod{
 		ObjectMeta: metav1.ObjectMeta{
@@ -267,7 +269,7 @@ func toPod(spec *engine.Spec, step *engine.Step) *v1.Pod {
 				Image:           step.Docker.Image,
 				ImagePullPolicy: toPullPolicy(step.Docker.PullPolicy),
 				Command:         command,
-				Args:            step.Docker.Args,
+				Args:            args,
 				WorkingDir:      step.WorkingDir,
 				SecurityContext: &v1.SecurityContext{
 					Privileged: &step.Docker.Privileged,
